@@ -17,8 +17,8 @@ function cargaDatos(rutaNombre, tipo)
 			//console.log(this.responseText);
 			//document.querySelector('#textoMostrar').innerHTML = this.responseText;
 			document.querySelector('#textoMostrar').className = "miNone";
-			if(tipo == "xml") gestionarFicheroXML(http.responseXML);
-			else gestionarFicheroTXT(http.responseText);
+			if(tipo == "xml") gestionarFicheroXML(this.responseXML);
+			else gestionarFicheroTXT(this.responseText);
 		}
 		else if (this.status == 404){
 			//console.log(this.responseText);
