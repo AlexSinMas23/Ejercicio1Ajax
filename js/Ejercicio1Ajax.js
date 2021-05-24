@@ -29,7 +29,7 @@ function cargaDatos(rutaNombre, tipo)
 
 function  gestionarFicheroXML()
 {
-	var resultado = documento.getElementById('filas');
+	var resultado = document.getElementById('filas');
 
 	if(window.XMLHttpRequest) {
 		xmlhttp = new XMLHttpRequest();
