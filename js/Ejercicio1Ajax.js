@@ -17,7 +17,8 @@ function cargaDatos()
 			//console.log(this.responseText);
 			//document.querySelector('#textoMostrar').innerHTML = this.responseText;
 			document.querySelector('#textoMostrar').className = "miNone";
-			gestionarFicheroTXT(this.responseText);
+			if(tipo == "xml") gestionarFicheroXML(http.responseXML);
+			else gestionarFicheroTXT(http.responseText);
 		}
 		else if (this.status == 404){
 			//console.log(this.responseText);
@@ -25,7 +26,6 @@ function cargaDatos()
 		}
 	}
 }
-
 
 
 function  gestionarFicheroTXT(txt)
