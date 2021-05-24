@@ -27,9 +27,17 @@ function cargaDatos(rutaNombre, tipo)
 	}
 }
 
-function  gestionarFicheroXML()
+function  gestionarFicheroXML(archivoXML)
 {
-	var resultado = document.getElementById('filas');
+	
+	let capaVacia = document.querySelector("#filas")
+	let objC = archivoXML.querySelectorAll("libreria")
+	for(let i=0; i<objC.length; i++)
+		capaVacia.innerHTML += `
+		<tr>
+			<td class="fila">${i}</td>
+		</tr>`;
+	/*var resultado = document.getElementById('filas');
 
 	if(window.XMLHttpRequest) {
 		xmlhttp = new XMLHttpRequest();
@@ -40,12 +48,11 @@ function  gestionarFicheroXML()
 	xmlhttp.onreadystatechange = function() {
 		if(xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 			if(xmlhttp.responseXML !== null) {
-				arr = xmlhttp.responseXML.getElementsByTagName("libreria");
+				//var arr = xmlhttp.responseXML.getElementsByTagName("libreria");
 				
 				//let filaMostrar = document.querySelector('#filas');
 				resultado.innerHTML = '';
-				let lineas = xml.split("<libreria>")
-				for(let i of lineas)
+				for(let i of xmlhttp.responseXML.getElementsByTagName("libreria"))
 				{
 				resultado.innerHTML += `
 				<tr>
@@ -54,7 +61,7 @@ function  gestionarFicheroXML()
 				}
 			}
 		}
-	}
+	}*/
 
 
 
