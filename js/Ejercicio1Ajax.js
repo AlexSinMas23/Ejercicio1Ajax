@@ -11,7 +11,7 @@ function cargaDatos(rutaNombre, tipo)
 
 	xhttp.send();
 
-	xhttp.onreadystatechange = function(){
+	xhttp.onreadystatechange = function(tipo){
 		if (this.readyState == 4 && this.status == 200){
 			document.querySelector('#textoMostrar').className = "miNone";
 			if(tipo == "xml") gestionarFicheroXML(this.responseXML);
@@ -28,8 +28,8 @@ function  gestionarFicheroXML(archivoXML)
 	
 	let capaVacia = document.querySelector("#filas")
 	let objC = archivoXML.querySelectorAll("libreria")
-	for(let e=0; e<objC.length; e++) {
-		let obcDesc = i.querySelector("nombre");
+	for(let e of objC) {
+		let obcDesc = e.querySelector("nombre");
 		capaVacia.innerHTML += `
 		<tr>
 			<td class="fila">${obcDesc}</td>
