@@ -29,16 +29,36 @@ function cargaDatos(rutaNombre, tipo)
 
 function  gestionarFicheroXML()
 {
-	let filaMostrar = document.querySelector('#filas');
-	filaMostrar.innerHTML = '';
-	let lineas = xml.split("<libreria>")
-	for(let i of lineas)
-	{
-	filaMostrar.innerHTML += `
-	<tr>
-		<td class="fila">${i}</td>
-	</tr>`;
-	}	
+	var resultado = documento.getElementById('filas');
+
+	if(window.XMLHttpRequest) {
+		xmlhttp = new XMLHttpRequest();
+	} else {
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+	xmlhttp.onreadystatechange = function() {
+		if(xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+			if(xmlhttp.responseXML !== null) {
+				//arr = xmlhttp.responseXML.getElementsByTagName("libreria");
+				
+				let filaMostrar = document.querySelector('#filas');
+				filaMostrar.innerHTML = '';
+				let lineas = xmlhttp.responseXML.getElementsByTagName("libreria");
+				for(let i of lineas)
+				{
+				filaMostrar.innerHTML += `
+				<tr>
+					<td class="fila">${i}</td>
+				</tr>`;
+				}
+			}
+		}
+	}
+
+
+
+		
     //document.querySelector("div:nth-child(2)").innerHTML += "<p>" + i + "</p>"
 }
 
