@@ -40,14 +40,14 @@ function  gestionarFicheroXML()
 	xmlhttp.onreadystatechange = function() {
 		if(xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 			if(xmlhttp.responseXML !== null) {
-				//arr = xmlhttp.responseXML.getElementsByTagName("libreria");
+				arr = xmlhttp.responseXML.getElementsByTagName("libreria");
 				
-				let filaMostrar = document.querySelector('#filas');
-				filaMostrar.innerHTML = '';
-				let lineas = xmlhttp.responseXML.getElementsByTagName("libreria");
+				//let filaMostrar = document.querySelector('#filas');
+				resultado.innerHTML = '';
+				let lineas = xml.split("<libreria>")
 				for(let i of lineas)
 				{
-				filaMostrar.innerHTML += `
+				resultado.innerHTML += `
 				<tr>
 					<td class="fila">${i}</td>
 				</tr>`;
