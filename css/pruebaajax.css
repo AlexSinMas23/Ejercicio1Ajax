@@ -1,0 +1,47 @@
+body
+{
+    background: #EAE3CB;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont
+{
+    background: white;
+    max-height: 100vh;
+    width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 5px;
+    border: 1px double black;
+}
+.fila
+{
+    background.color: white;
+    height: 30px;
+    width: 90%;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.btn
+{
+    border-radius: 3px;
+    border: none;
+    height: 40px;
+    width: 100px;
+    margin-right: 20px;
+}
+.btn:hover
+{
+    transition: 1s;
+    opacity: 80%;
+}
+.miNone
+{
+    display: none;
+}
