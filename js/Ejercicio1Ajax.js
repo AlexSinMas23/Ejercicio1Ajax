@@ -25,6 +25,7 @@ function cargaDatos(rutaNombre, tipo)
 
 function  gestionarFicheroXML(archivoXML)
 {
+	console.log('Gestionando fichero XML');
 	let capaVacia = document.querySelector("#filas")
 	let objC = archivoXML.querySelectorAll("libreria")
 	for(let e of objC) {
@@ -47,6 +48,7 @@ function  gestionarFicheroXML(archivoXML)
 
 function  gestionarFicheroTXT(txt)
 {
+	console.log('Gestionando fichero TXT');
 	let filaMostrar = document.querySelector('#filas');
 	filaMostrar.innerHTML = '';
   let lineas = txt.split("\n")
