@@ -42,13 +42,14 @@ function cargaDatos(rutaNombre, tipo)
 function  gestionarFicheroXML(archivoXML)
 {
 	console.log('Gestionando fichero XML');
-	let capaVacia = document.querySelector("#filas")
-	let objC = archivoXML.querySelector("busquedaLibros")
+	let capaVacia = document.querySelector("#filas");
+	let general = archivoXML.querySelector("busquedaLibros");
+	let objC = general.querySelectorAll("libreria");
 	for(let e of objC) {
-		let objCDesc = e.querySelectorAll("libreria");
+		let objCDesc = e.querySelector("nombre");
 		capaVacia.innerHTML += `
 		<tr>
-			<td class="fila">${objCDesc.querySelector("nombre").responseText}</td>
+			<td class="fila">${objCDesc}</td>
 		</tr>`;
 	}
 }
@@ -59,7 +60,7 @@ function  gestionarFicheroTXT(txt)
 	console.log('Gestionando fichero TXT');
 	let filaMostrar = document.querySelector('#filas');
 	filaMostrar.innerHTML = '';
-  let lineas = txt.split("\n")
+  let lineas = txt.split("\n");
   for(let i of lineas)
   filaMostrar.innerHTML += `
   <tr>
