@@ -47,9 +47,9 @@ function  gestionarFicheroXML(archivoXML)
 	let general = archivoXML.querySelector("busquedaLibros");
 	let objC = general.querySelectorAll("libreria");
 	for(let e of objC) {
-		//let objCDesc = e.querySelector("nombre");
-		let objCDesc = e.getElementsByTagName("nombre");
-		/*if (objCDesc.length)
+		let objCDesc = e.querySelector("nombre");
+		//let objCDesc = e.getElementsByTagName("nombre");
+		if (objCDesc.length)
 		{
 			capaVacia.innerHTML += `
 			<tr>
@@ -61,12 +61,12 @@ function  gestionarFicheroXML(archivoXML)
 			</tr>`;
 		}
 		else
-		{*/
+		{
 			capaVacia.innerHTML += `
 			<tr>
 				<td class="fila">${objCDesc}</td>
 			</tr>`;
-		//}
+		}
 	}
 }
 
