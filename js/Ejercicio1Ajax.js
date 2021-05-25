@@ -27,12 +27,12 @@ function  gestionarFicheroXML(archivoXML)
 {
 	console.log('Gestionando fichero XML');
 	let capaVacia = document.querySelector("#filas")
-	let objC = archivoXML.querySelectorAll("libreria")
+	let objC = archivoXML.querySelector("busquedaLibros")
 	for(let e of objC) {
-		let obcDesc = e.querySelector("nombre");
+		let objCDesc = e.querySelectorAll("libreria");
 		capaVacia.innerHTML += `
 		<tr>
-			<td class="fila">${obcDesc.textContent}</td>
+			<td class="fila">${objCDesc.querySelector("nombre").responseText}</td>
 		</tr>`;
 	}
 	/*for(let i=0; i<objC.length; i++) {
