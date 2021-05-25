@@ -48,11 +48,25 @@ function  gestionarFicheroXML(archivoXML)
 	let objC = general.querySelectorAll("libreria");
 	for(let e of objC) {
 		//let objCDesc = e.querySelector("nombre");
-		let objCDesc = e.getElementsByTagName("nombre")[0].textContent;
-		capaVacia.innerHTML += `
-		<tr>
-			<td class="fila">${objCDesc}</td>
-		</tr>`;
+		let objCDesc = e.getElementsByTagName("nombre");
+		/*if (objCDesc.length)
+		{
+			capaVacia.innerHTML += `
+			<tr>
+				`;
+			for(let i of objCDesc) {
+				capaVacia.innerHTML += `<td class="fila">${objCDesc}</td>`;
+			}
+			capaVacia.innerHTML += `
+			</tr>`;
+		}
+		else
+		{*/
+			capaVacia.innerHTML += `
+			<tr>
+				<td class="fila">${objCDesc}</td>
+			</tr>`;
+		//}
 	}
 }
 
