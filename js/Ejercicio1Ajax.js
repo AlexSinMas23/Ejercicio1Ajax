@@ -64,7 +64,7 @@ function  gestionarFicheroXML(archivoXML)
 		{
 			capaVacia.innerHTML += `
 			<tr>
-				<td class="fila">${objCDesc}</td>
+				<td class="fila">${objCDesc.textContent}</td>
 			</tr>`;
 		}
 	}
