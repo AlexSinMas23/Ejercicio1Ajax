@@ -53,11 +53,11 @@ function  gestionarFicheroXML(archivoXML)
 			<tr>
 				<td class="fila">${e.getElementsByTagName("nombre")[0].textContent}</td>
 			</tr>`;
-		let objCDesc = e.getElementsByTagName("libro");
+		let objCDesc = e.getElementsByTagName("libro").childNodes;
 
 		if (objCDesc.length)
 		{
-			objCDesc = objCDesc.childNodes;
+			//objCDesc = objCDesc.childNodes;
 			capaVacia.innerHTML += `
 			<tr>
 				`;
