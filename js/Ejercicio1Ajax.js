@@ -53,11 +53,11 @@ function  gestionarFicheroXML(archivoXML)
 			<tr>
 				<td class="fila">${e.getElementsByTagName("nombre")[0].textContent}</td>
 			</tr>`;
+		let objCDesc = e.getElementsByTagName("libro");
 
-		if (/*objCDesc.length*/e.getElementsByTagName("libro").hasChildNodes())
+		if (objCDesc.length)
 		{
-			let objCDesc = e.getElementsByTagName("libro").childNodes;
-
+			objCDesc = objCDesc.childNodes;
 			capaVacia.innerHTML += `
 			<tr>
 				`;
@@ -71,7 +71,7 @@ function  gestionarFicheroXML(archivoXML)
 		{
 			capaVacia.innerHTML += `
 			<tr>
-				<td class="fila">${e.getElementsByTagName("libro").textContent}</td>
+				<td class="fila">${objCDesc.textContent}</td>
 			</tr>`;
 		}
 	}
