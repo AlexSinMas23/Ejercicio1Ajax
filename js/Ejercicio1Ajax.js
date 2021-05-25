@@ -41,7 +41,6 @@ function cargaDatos(rutaNombre, tipo)
 
 function  gestionarFicheroXML(archivoXML)
 {
-
 	console.log('Gestionando fichero XML');
 	let capaVacia = document.querySelector("#filas");
 	let general = archivoXML.querySelector("busquedaLibros");
@@ -66,7 +65,7 @@ function  gestionarFicheroXML(archivoXML)
 				var detailsA = i.childNodes;
 
 				for(let r of detailsA) {
-					capaVacia.innerHTML += `<td class="fila">${i.textContent}</td>`;
+					capaVacia.innerHTML += `<td class="fila">${r.textContent}</td>`;
 				}
 			}
 			capaVacia.innerHTML += `
