@@ -46,7 +46,7 @@ function  gestionarFicheroXML(archivoXML)
 	let general = archivoXML.querySelector("busquedaLibros");
 	let objC = general.querySelectorAll("libreria");
 	for(let e of objC) {
-		let objCDesc = e.querySelector("nombre").responseText;
+		let objCDesc = e.querySelector("nombre").textContent;
 		capaVacia.innerHTML += `
 		<tr>
 			<td class="fila">${objCDesc}</td>
