@@ -48,6 +48,13 @@ function  gestionarFicheroXML(archivoXML)
 	let objC = general.querySelectorAll("libreria");
 	for(let e of objC) {
 		//let objCDesc = e.querySelector("nombre").responseText;
+
+		/*capaVacia.innerHTML += `
+			<tr>
+				<td class="fila">${getElementsByTagName("nombre")[0].textContent}</td>
+			</tr>`;
+		let objCDesc = e.getElementsByTagName("libro");*/
+
 		let objCDesc = e.getElementsByTagName("nombre");
 		if (objCDesc.length)
 		{
