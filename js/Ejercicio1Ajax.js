@@ -41,12 +41,14 @@ function cargaDatos(rutaNombre, tipo)
 
 function  gestionarFicheroXML(archivoXML)
 {
+
 	console.log('Gestionando fichero XML');
 	let capaVacia = document.querySelector("#filas");
 	let general = archivoXML.querySelector("busquedaLibros");
 	let objC = general.querySelectorAll("libreria");
 	for(let e of objC) {
-		let objCDesc = e.querySelector("nombre").textContent;
+		//let objCDesc = e.querySelector("nombre");
+		let objCDesc = e.getElementsByTagName("nombre")[0].textContent;
 		capaVacia.innerHTML += `
 		<tr>
 			<td class="fila">${objCDesc}</td>
