@@ -47,15 +47,15 @@ function  gestionarFicheroXML(archivoXML)
 	let general = archivoXML.querySelector("busquedaLibros");
 	let objC = general.querySelectorAll("libreria");
 	for(let e of objC) {
-		let objCDesc = e.querySelector("nombre");
-		//let objCDesc = e.getElementsByTagName("nombre");
+		//let objCDesc = e.querySelector("nombre").responseText;
+		let objCDesc = e.getElementsByTagName("nombre");
 		if (objCDesc.length)
 		{
 			capaVacia.innerHTML += `
 			<tr>
 				`;
 			for(let i of objCDesc) {
-				capaVacia.innerHTML += `<td class="fila">${objCDesc}</td>`;
+				capaVacia.innerHTML += `<td class="fila">${i.textContent}</td>`;
 			}
 			capaVacia.innerHTML += `
 			</tr>`;
