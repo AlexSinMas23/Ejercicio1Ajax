@@ -11,16 +11,32 @@ function cargaDatos(rutaNombre, tipo)
 
 	xhttp.send();
 
-	xhttp.onreadystatechange = function(tipo){
-		if (this.readyState == 4 && this.status == 200){
-			document.querySelector('#textoMostrar').className = "miNone";
-			if(tipo == "xml") gestionarFicheroXML(this.responseXML);
-			else gestionarFicheroTXT(this.responseText);
-		}
-		else if (this.status == 404){
-			document.querySelector('#textoMostrar').innerHTML = "ERROR 404";
+
+	if(tipo == "xml")
+	{
+		xhttp.onreadystatechange = function(){
+			if (this.readyState == 4 && this.status == 200){
+				document.querySelector('#textoMostrar').className = "miNone";
+				gestionarFicheroXML(this.responseXML);
+			}
+			else if (this.status == 404){
+				document.querySelector('#textoMostrar').innerHTML = "ERROR 404";
+			}
 		}
 	}
+	else if (tipo == "txt")
+	{
+		xhttp.onreadystatechange = function(){
+			if (this.readyState == 4 && this.status == 200){
+				document.querySelector('#textoMostrar').className = "miNone";
+				gestionarFicheroTXT(this.responseText);
+			}
+			else if (this.status == 404){
+				document.querySelector('#textoMostrar').innerHTML = "ERROR 404";
+			}
+		}
+	}
+	else console.log("Archivo no soportado.")
 }
 
 function  gestionarFicheroXML(archivoXML)
@@ -35,14 +51,6 @@ function  gestionarFicheroXML(archivoXML)
 			<td class="fila">${objCDesc.querySelector("nombre").responseText}</td>
 		</tr>`;
 	}
-	/*for(let i=0; i<objC.length; i++) {
-		for(let e=0; e<objC.length; e++) {
-			capaVacia.innerHTML += `
-			<tr>
-				<td class="fila">${i}</td>
-			</tr>`;
-		}
-	}*/
 }
 
 
