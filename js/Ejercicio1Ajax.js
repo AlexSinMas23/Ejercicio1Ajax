@@ -61,7 +61,6 @@ function  gestionarFicheroXML(archivoXML)
 			<tr>
 				`;
 			for(let i of objCDesc) {
-
 				var detailsA = i.childNodes;
 
 				for(let r of detailsA) {
