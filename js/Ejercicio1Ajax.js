@@ -50,7 +50,7 @@ function  gestionarFicheroXML(archivoXML)
 
 		capaVacia.innerHTML += `
 			<tr>
-				<td class="fila" rowspan = "8">${e.getElementsByTagName("nombre")[0].textContent}</td>
+				<td class="fila" colspan = "8">${e.getElementsByTagName("nombre")[0].textContent}</td>
 			</tr>`;
 		let objCDesc = e.getElementsByTagName("libro");
 
