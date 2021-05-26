@@ -50,33 +50,26 @@ function  gestionarFicheroXML(archivoXML)
 
 		capaVacia.innerHTML += `
 			<tr>
-				<td class="fila" colspan = "8">${e.getElementsByTagName("nombre")[0].textContent}</td>
-			</tr>`;
+				<td class="fila" colspan = "8">${e.getElementsByTagName("nombre")[0].textContent}</td>`;
 		let objCDesc = e.getElementsByTagName("libro");
 
 		if (objCDesc.length)
 		{
 			//objCDesc = objCDesc.childNodes;
-			capaVacia.innerHTML += `
-			<tr>
-				`;
 			for(let i of objCDesc) {
 				var detailsA = i.childNodes;
 
 				for(let r of detailsA) {
-					if (r.textContent !== "")capaVacia.innerHTML += `<td class="fila">${r.textContent}</td>`;
+					if (r.textContent !== "\n") capaVacia.innerHTML += `<td class="fila">${r.textContent}</td>`;
 				}
 			}
-			capaVacia.innerHTML += `
-			</tr>`;
 		}
 		else
 		{
 			capaVacia.innerHTML += `
-			<tr>
-				<td class="fila">${objCDesc.textContent}</td>
-			</tr>`;
+				<td class="fila">${objCDesc.textContent}</td>`;
 		}
+		capaVacia.innerHTML += `</tr>`;
 	}
 }
 
