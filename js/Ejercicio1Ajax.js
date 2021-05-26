@@ -60,7 +60,7 @@ function  gestionarFicheroXML(archivoXML)
 				var detailsA = i.childNodes;
 
 				for(let r of detailsA) {
-					if (r.textContent !== "\n") capaVacia.innerHTML += `<td class="fila">${r.textContent}</td>`;
+					if (r.textContent != "\n" && r.textContent != "") capaVacia.innerHTML += `<td class="fila">${r.textContent}</td>`;
 				}
 			}
 		}
